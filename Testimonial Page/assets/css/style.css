@@ -108,8 +108,9 @@ body{
 .google__with-icon {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 20px;
     flex-wrap: wrap;
+    align-items: end;
 }
 
 
