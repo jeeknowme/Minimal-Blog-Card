@@ -1,0 +1,176 @@
+:root{
+    --text-white: white;
+    --be-vietnam-pro: 'Be Vietnam Pro', sans-serif;
+
+}
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family: var(--be-vietnam-pro);
+
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    background-image: url(../images/bg-image.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ul{
+    padding: 0px;
+}
+
+h1,h2,h3,h4,h5,h6, p, ul{
+    margin: 0px;
+}
+
+.container{
+    padding: 1rem 1.4rem;
+}
+
+/* Header */
+
+.header{
+    color:var(--text-white)
+}
+
+.header__main--text{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+
+.header__sub--text{
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 0.75rem;
+}
+
+/* Form */
+
+.form__container{
+    display: grid;
+    background-color: rgba(205,213,224, 0.2);
+    border-radius: 20px;
+    padding: 30px 30px 100px 30px;
+    grid-gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+
+}
+.form__group > input , .dropdown__input--group {
+    margin-top: 5px;
+}
+
+.form__group > input {
+    width: 100%;
+    border: none;
+    padding: 25px;
+    font-size: 18px;
+    border-radius: 15px;
+    outline: none;
+}
+
+.form__group label {
+    color: var(--text-white);
+    font-size: 0.875rem;
+
+}
+
+.form__button {
+    width: 100%;
+    padding: 25px;
+    border-radius: 15px;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    color: #4036A9;
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+.form__group--message{
+    min-height: 200px;
+}
+
+.dropdown__input--group{
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+}
+
+.dropdown__input--group input, .dropdown__input--group textarea{
+    width: 100%;
+    outline:none;
+    border:none;
+    border-radius: 15px 0 0 10px;
+    padding: 25px;
+    font-size: 18px;
+    font-weight: 900;
+    color:black;
+}
+
+.dropdown__input--group i {
+    align-self: center;
+    padding:9px 20px 9px 9px;
+    cursor: pointer;
+}
+
+
+
+
+@media (min-width: 641px){
+  
+
+    .form__group--name{
+        grid-area: name;
+    }
+
+    .form__group--email{
+        grid-area: email;
+    }
+    .form__group--size{
+        grid-area: size;
+    }
+    .form__group--subject{
+        grid-area: subject;
+    }
+    .form__group--message{
+        grid-area: message;
+    }
+    .form__group--button{
+        grid-area: button;
+    }
+
+
+   
+    .form__container{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr auto 1fr;
+        padding: 30px;
+        grid-template-areas: 
+        "name email"
+        "size subject"
+        "message message"
+        "button button"
+        ;
+    }
+}
+
+@media (min-width: 1025px){
+    .form__container{
+        max-width: 815px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .header__main--text{
+        font-size: 64px;
+    }
+
+    .header__sub--text{
+        font-size: 32px;
+    }
+}

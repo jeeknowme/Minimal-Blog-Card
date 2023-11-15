@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <img src="./assets/images/contact-form-icon.svg" alt="BECV Image" />
+      </nav>
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <h1 class="header__main--text">
+          Interested in our <br />
+          business pricing?
+        </h1>
+        <h4 class="header__sub--text">
+          Fill out the form to view details and we'll <br />
+          contact you as soon as possible.
+        </h4>
+      </div>
+    </div>
+
+    <div class="container">
+      <form class="form__container" action="#">
+        <div class="form__group form__group-name">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enthan Johnson" />
+        </div>
+        <div class="form__group form__group-email">
+          <label for="email">Company Email</label>
+          <input type="email" id="email" placeholder="ethan@johnson.com" />
+        </div>
+        <div class="form__group form__group-size">
+          <label for="size">Company Size</label>
+          <div class="dropdown__input--group">
+            <input type="text" id="size" placeholder="50-100 employees" />
+            <i
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M18 9L12 15L6 9" stroke="#111729" stroke-width="2" />
+              </svg>
+            </i>
+          </div>
+        </div>
+        <div class="form__group form__group--subject">
+          <label for="subject">Subject</label>
+          <div class="dropdown__input--group">
+            <input
+              type="text"
+              id="subject"
+              placeholder="Building Landing pages"
+            />
+            <i
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M18 9L12 15L6 9" stroke="#111729" stroke-width="2" />
+              </svg>
+            </i>
+          </div>
+        </div>
+        <div class="form__group form__group--message">
+          <label for="message">Message</label>
+          <div class="dropdown__input--group">
+            <textarea
+              placeholder="50-100 employees"
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <i
+              ><svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M18 9L12 15L6 9" stroke="#111729" stroke-width="2" />
+              </svg>
+            </i>
+          </div>
+        </div>
+        <button class="form__button form__group--button">Contact Sales</button>
+      </form>
+    </div>
+  </body>
+</html>
