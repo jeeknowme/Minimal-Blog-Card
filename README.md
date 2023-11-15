@@ -6,3 +6,4 @@ This is a practice project from DevChallenges
 - Business Blog Card
 - Testimonial Page
 - Contact Page
+- Simple Home Page
