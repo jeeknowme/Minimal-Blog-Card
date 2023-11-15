@@ -1,0 +1,128 @@
+:root{
+    --body-margin: 22px;
+}
+
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+p{
+    line-height: 1.5em;
+}
+h1,h2,h3,h4,h5,h6, p{
+    margin: 0px;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+}
+
+body{
+    margin: 0;
+    background-color: #FAFAF9;
+    font-family: 'Sora', sans-serif;
+}
+
+.main__container{
+    align-items: center;
+    padding: 0 4em;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: auto 1fr auto ;
+    grid-gap: 3em;
+    max-width: 1280px;
+    grid-template-areas: 
+    ". ."
+    "description reviewer_card"
+    ". . ";
+    
+}
+
+/* Description */
+
+.description{
+    grid-area: description;
+}
+
+.description__image{
+    background-color:#F5C044 ;
+    border-radius: 100px;
+    padding: 10px;
+}
+
+.description__title{
+    font-size: 2.25rem;
+    font-weight: 500;
+}
+
+.description__text{
+    font-size: 1.25rem;
+    margin-top: 0.75em;
+}
+
+.description__list {
+    font-size: 0.875rem;
+    margin-top: 2em;
+}
+
+.description__list > li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Reviewer Card */
+
+.reviewer__card{
+    grid-area: reviewer_card;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+}
+
+.reviewer__card--item{
+    background-color: #FFFFFF;
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 1.5em 2.5em;
+    max-width: 370px;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    box-shadow: 0px 0px 31px 1px rgba(197, 197, 197, 0.5);
+}
+
+.reviewer__card--item:first-child {
+    margin-left: auto;
+}
+
+
+.google__with-icon {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+
+.google__with-icon > img {
+    width: 100px;
+}
+
+
+@media (max-width: 640px) {
+    .main__container{
+        margin-top: 5em;
+        padding: 0 30px;
+        grid-template-areas: 
+    "description description"
+    "reviewer_card reviewer_card";
+    }
+}
