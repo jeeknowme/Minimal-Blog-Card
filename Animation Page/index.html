@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animation</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <span class="logo">Jinumi</span>
+
+          <button
+            class="hamburger-button"
+            id="hamburger-button"
+            onclick="toggleNavigation()"
+          >
+            <div class="hamburger-button__bar"></div>
+            <div class="hamburger-button__bar"></div>
+            <div class="hamburger-button__bar"></div>
+          </button>
+        </div>
+      </div>
+
+      <nav>
+        <div class="nav" id="nav">
+          <ul>
+            <li class="nav-item">Contact</li>
+            <li class="nav-item">Settings</li>
+            <li class="nav-item">Subscribe</li>
+
+            <li class="nav-item nav-item__separator"></li>
+
+            <li class="nav-item nav-item--small">Sign up</li>
+            <li class="nav-item nav-item--small">Log in</li>
+          </ul>
+        </div>
+
+        <div class="backdrop"></div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <h1>Coffee is !Expensive</h1>
+
+        <p>Different flavors to cater your thirst</p>
+
+        <button>Get started</button>
+
+        <img
+          src="./assets/images/coffee-svgrepo-com.svg"
+          alt="circle-background"
+          class="background-image background-image--right"
+        />
+        <img
+          src="./assets/images/coffee-svgrepo-com.svg"
+          alt="circle-background"
+          class="background-image background-image--left"
+        />
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        Have a life
+        <a href="https://facebook.com/">Facebook.com</a>
+      </div>
+    </footer>
+
+    <script>
+      const toggle = (elementId) => {
+        const element = document.getElementById(elementId);
+
+        element.classList.toggle("--open");
+
+        element.classList.toggle(elementId + "--open");
+      };
+
+      const toggleNavigation = () => {
+        toggle("nav");
+        toggle("hamburger-button");
+      };
+    </script>
+  </body>
+</html>

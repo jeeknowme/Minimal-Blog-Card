@@ -7,3 +7,4 @@ This is a practice project from DevChallenges
 - Testimonial Page
 - Contact Page
 - Simple Home Page
+- Animation Page
