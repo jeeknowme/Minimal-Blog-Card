@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="top__content">
+      <div class="container">
+        <nav class="navigation" id="navigation">
+          <div class="nav__container">
+            <ul>
+              <li><img src="./assets/images/logo.svg" alt="brand logo" /></li>
+              <li>
+                <a class="navigation__button" href="#">
+                  <span class="material-symbols-outlined"> bookmark </span
+                  >Reservations</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="main__header">
+          <h1 class="main__title">
+            Travel is the only thing you buy that makes you richer
+          </h1>
+
+          <h4>
+            Adventure
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="48"
+              viewBox="0 -960 960 960"
+              width="48"
+            >
+              <path
+                d="m377-300 284-180-284-181v361ZM480.138-55Q392-55 314.513-88.084q-77.488-33.083-135.417-91.012T88.084-314.375Q55-391.724 55-479.862 55-569 88.084-646.487q33.083-77.488 90.855-134.969 57.772-57.482 135.195-91.013Q391.557-906 479.779-906q89.221 0 166.827 33.454 77.605 33.453 135.012 90.802 57.407 57.349 90.895 134.877Q906-569.34 906-480q0 88.276-33.531 165.747-33.531 77.471-91.013 135.278-57.481 57.808-134.831 90.891Q569.276-55 480.138-55Z"
+                fill="#ffffff"
+              />
+            </svg>
+          </h4>
+
+          <div class="booking__container">
+            <div class="booking__selection">
+              <div class="form__group">
+                <label for="check_in">check in</label>
+                <input id="check_in" type="date" value="2021-12-01" />
+              </div>
+              <div class="form__group">
+                <label for="check_out">check out</label>
+                <input id="check_out" type="date" value="2021-02-03" />
+              </div>
+              <div class="form__group">
+                <label for="check_out">person</label>
+                <select name="person" id="person">
+                  <option value="2">2 adults</option>
+                  <option value="3">3 adults</option>
+                  <option value="4">4 adults</option>
+                </select>
+              </div>
+            </div>
+            <button class="booking__button">book now</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main__content">
+      <!-- ABOUT US -->
+      <div class="container">
+        <div class="main__content--section">
+          <h4>about us</h4>
+          <div class="about__us">
+            <div class="about__us--left">
+              <h1>People don't take trips, trips take people</h1>
+              <p>
+                If you think your country does everything the right way and is
+                revered by other nations, you’ll definitely have those notions
+                put to the test when you enter another country.
+              </p>
+              <div class="content__image">
+                <img src="./assets/images/image-2.png" alt="Island Image" />
+              </div>
+            </div>
+            <div class="about__us--right">
+              <p>
+                Have you ever felt the rain on your skin in multiple countries?
+                I have, and I’m here to tell you that it’s always a thrilling
+                sensation each time it happens somewhere new. By traveling, I’ve
+                learned to appreciate things that I would normally ignore.
+              </p>
+              <p>
+                Just like everyone else, I spend some of my days sitting on a
+                couch watching television. Of course, these aren’t the moments
+                that define me, nor are they what I think of when wandering
+                through my favorite memories.
+              </p>
+              <div class="content__image">
+                <img src="./assets/images/image-3.png" alt="Island Image" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACCOMMODATIONS -->
+
+      <div class="container">
+        <div class="main__content--section" id="accommodations">
+          <h4>accommodations</h4>
+          <div class="main__content--title-container">
+            <h1 class="accommodations__title">Rooms / Suites.</h1>
+            <h3>
+              See all Rooms
+              <svg
+                width="24px"
+                height="24px"
+                viewBox="0 0 24.00 24.00"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g id="SVGRepo_bgCarrier" stroke-width="0" />
+
+                <g
+                  id="SVGRepo_tracerCarrier"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke="#CCCCCC"
+                  stroke-width="0.384"
+                />
+
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M4 11.25C3.58579 11.25 3.25 11.5858 3.25 12C3.25 12.4142 3.58579 12.75 4 12.75H13.25V18C13.25 18.3034 13.4327 18.5768 13.713 18.6929C13.9932 18.809 14.3158 18.7449 14.5303 18.5304L20.5303 12.5304C20.671 12.3897 20.75 12.1989 20.75 12C20.75 11.8011 20.671 11.6103 20.5303 11.4697L14.5303 5.46969C14.3158 5.25519 13.9932 5.19103 13.713 5.30711C13.4327 5.4232 13.25 5.69668 13.25 6.00002V11.25H4Z"
+                    fill="#FE5303"
+                  />
+                </g>
+              </svg>
+            </h3>
+          </div>
+          <div class="rooms__suites">
+            <div class="rooms__suites--images">
+              <div class="rooms__suites--item">
+                <div class="suites__item--description">
+                  <h3>Sea View Apartment</h3>
+                  <h5>$549 <span>night</span></h5>
+                </div>
+                <div class="item__overlay">
+                  <h5><a href="#">VIEW</a></h5>
+                </div>
+              </div>
+            </div>
+            <div class="rooms__suites--images">
+              <div class="rooms__suites--item">
+                <div class="suites__item--description">
+                  <h3>Whole House</h3>
+                  <h5>$349 <span>night</span></h5>
+                </div>
+                <div class="item__overlay">
+                  <h5><a href="#">VIEW</a></h5>
+                </div>
+              </div>
+            </div>
+            <div class="rooms__suites--images">
+              <div class="rooms__suites--item">
+                <div class="suites__item--description">
+                  <h3>Minimal Room</h3>
+                  <h5>$149 <span>night</span></h5>
+                </div>
+                <div class="item__overlay">
+                  <h5><a href="#">VIEW</a></h5>
+                </div>
+              </div>
+            </div>
+            <div class="rooms__suites--images">
+              <div class="rooms__suites--item">
+                <div class="suites__item--description">
+                  <h3>Rural House</h3>
+                  <h5>$129 <span>night</span></h5>
+                </div>
+                <div class="item__overlay">
+                  <h5><a href="#">VIEW</a></h5>
+                </div>
+              </div>
+            </div>
+            <div class="rooms__suites--images">
+              <div class="rooms__suites--item">
+                <div class="suites__item--description">
+                  <h3>Modern House</h3>
+                  <h5>$229 <span>night</span></h5>
+                </div>
+                <div class="item__overlay">
+                  <h5><a href="#">VIEW</a></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIALS -->
+
+      <div class="main__content--section" id="testimonials">
+        <div class="container">
+          <h4>testimonials</h4>
+          <div class="main__content--title-container">
+            <h1>What <span>clients</span> say about us.</h1>
+          </div>
+          <div class="testimonials__card">
+            <div class="testimonials__card--item">
+              <div class="item__box">
+                <h5>Amazing hotels!</h5>
+                <p>
+                  Phasellus ut elementum mauris. Quisque pharetra justo neque,
+                  in pulvinar nisl fringilla in. Duis molestie gravida enim.
+                  Cras fermentum eros ipsum, posuere rutrum nibh eleifend quis.
+                </p>
+              </div>
+              <div class="item__info">
+                <img
+                  src="./assets/images/person-1.png"
+                  alt="User Profile Image"
+                />
+                <div class="item__info--details">
+                  <p class="info__details--name">Miller Stark</p>
+                  <p class="info__details--origin">from Finland</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonials__card--item">
+              <div class="item__box">
+                <h5>Best experiences</h5>
+                <p>
+                  Phasellus ut elementum mauris. Quisque pharetra justo neque,
+                  in pulvinar nisl fringilla in. Duis molestie gravida enim.
+                  Cras fermentum eros ipsum, posuere rutrum nibh eleifend quis.
+                </p>
+              </div>
+              <div class="item__info">
+                <img
+                  src="./assets/images/person-2.png"
+                  alt="User Profile Image"
+                />
+                <div class="item__info--details">
+                  <p class="info__details--name">Zara Herman</p>
+                  <p class="info__details--origin">from Canada</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonials__card--item">
+              <div class="item__box">
+                <h5>I will go back again!</h5>
+                <p>
+                  Phasellus ut elementum mauris. Quisque pharetra justo neque,
+                  in pulvinar nisl fringilla in. Duis molestie gravida enim.
+                  Cras fermentum eros ipsum, posuere rutrum nibh eleifend quis.
+                </p>
+              </div>
+              <div class="item__info">
+                <img
+                  src="./assets/images/person-3.png"
+                  alt="User Profile Image"
+                />
+                <div class="item__info--details">
+                  <p class="info__details--name">Jackson Nguyen</p>
+                  <p class="info__details--origin">from Vietnam</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div class="container">
+        <h6>© devchallenges.io</h6>
+      </div>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

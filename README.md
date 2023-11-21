@@ -8,3 +8,4 @@ This is a practice project from DevChallenges
 - Contact Page
 - Simple Home Page
 - Animation Page
+- Highmos Page

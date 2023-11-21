@@ -1,0 +1,478 @@
+.rooms__suites--images:nth-child(1) .rooms__suites--item {
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #000 100%), url("../images/stay-1.png");
+}
+
+.rooms__suites--images:nth-child(2) .rooms__suites--item {
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #000 100%), url("../images/stay-2.png");
+}
+
+.rooms__suites--images:nth-child(3) .rooms__suites--item {
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #000 100%), url("../images/stay-3.png");
+}
+
+.rooms__suites--images:nth-child(4) .rooms__suites--item {
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #000 100%), url("../images/stay-4.png");
+}
+
+.rooms__suites--images:nth-child(5) .rooms__suites--item {
+  background: linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, #000 100%), url("../images/stay-5.png");
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, body, li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.container {
+  padding: 0px 14px 16px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.nav__container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+}
+
+header.top__content {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/image-1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  padding-bottom: 51px;
+}
+
+nav.navigation {
+  padding-top: 26px;
+  position: relative;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+nav.navigation.nav__fix {
+  padding: 0px 14px 16px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: rgb(254, 83, 3);
+  padding: 10px 0px;
+  z-index: 2;
+  opacity: 0.9 !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for better visibility */
+}
+nav.navigation ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+nav.navigation ul img {
+  height: 22px;
+  width: 96px;
+}
+nav.navigation ul a.navigation__button {
+  background: #FE5303;
+  color: #FFFFFF;
+  padding: 7px 23.5px;
+  border-radius: 52px;
+  font-weight: 600;
+  font-size: 10px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+div.main__header {
+  color: #FFFFFF;
+  margin-top: 5em;
+}
+div.main__header h1.main__title {
+  font-size: 52px;
+  color: #FFFFFF;
+}
+div.main__header h4 {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+div.main__header h4 svg {
+  width: 75px;
+  height: 75px;
+  border: 1px solid white;
+  border-radius: 52px;
+  padding: 12px;
+}
+div.main__header div.booking__container {
+  margin-top: 100px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+div.main__header div.booking__container .booking__selection {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px 30px;
+  display: grid;
+  grid-gap: 32px;
+}
+div.main__header div.booking__container .booking__selection .form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+div.main__header div.booking__container .booking__selection .form__group label {
+  color: #BDBDBD;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+div.main__header div.booking__container .booking__selection .form__group input[type=date], div.main__header div.booking__container .booking__selection .form__group select {
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  background-color: rgba(0, 0, 0, 0);
+}
+div.main__header div.booking__container button.booking__button {
+  margin-top: 16px;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color: #FE5303;
+  border: none;
+  border-radius: 12px;
+  color: #FFFFFF;
+  padding: 32px 44px;
+  box-shadow: 0px 4px 20px 0px rgba(254, 83, 3, 0.6);
+}
+
+.main__content {
+  margin-top: 100px;
+  display: grid;
+}
+.main__content .main__content--section h4 {
+  font-size: 16px;
+  color: #BDBDBD;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+}
+.main__content .main__content--section h1 {
+  font-size: 48px;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: #333;
+  margin-top: 36px;
+}
+.main__content .main__content--section h1.accommodations__title {
+  margin-top: 20px;
+}
+.main__content .main__content--section#accommodations {
+  padding: 80px 0px;
+}
+.main__content .main__content--section .about__us {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2.5s ease, transform 2.5s ease;
+}
+.main__content .main__content--section .show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.main__content .main__content--section .about__us--left p, .main__content .main__content--section .about__us--right p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #BDBDBD;
+  margin-top: 26px;
+}
+.main__content .main__content--section .about__us--left .content__image, .main__content .main__content--section .about__us--right .content__image {
+  margin-top: 35px;
+}
+.main__content .main__content--section .about__us--left .content__image img, .main__content .main__content--section .about__us--right .content__image img {
+  border-radius: 12px;
+}
+.main__content .main__content--section .about__us--right p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #BDBDBD;
+  margin-top: 40px;
+}
+.main__content .main__content--section div.main__content--title-container {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+.main__content .main__content--section div.main__content--title-container h3 {
+  color: #FE5303;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.main__content .main__content--section div.rooms__suites--images {
+  position: relative;
+  cursor: pointer;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
+  margin-top: 52px;
+}
+.main__content .main__content--section div.rooms__suites--images:nth-child(3) {
+  margin-top: 40px;
+}
+.main__content .main__content--section div.rooms__suites--images div.rooms__suites--item {
+  border-radius: 12px;
+  background-size: cover;
+  height: 335px;
+  border-radius: 12px;
+  background-position: center;
+  position: relative;
+  color: #FFFFFF;
+}
+.main__content .main__content--section div.rooms__suites--images div.rooms__suites--item:hover div.item__overlay {
+  height: 100%;
+  opacity: 1;
+}
+.main__content .main__content--section div.rooms__suites--images div.rooms__suites--item div.item__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(rgba(204, 204, 204, 0.53), rgba(115, 115, 115, 0.65));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  cursor: pointer;
+}
+.main__content .main__content--section div.rooms__suites--images div.rooms__suites--item div.item__overlay h5 {
+  font-size: 48px;
+}
+.main__content .main__content--section div.rooms__suites--images div.rooms__suites--item div.item__overlay h5 a {
+  color: white;
+}
+.main__content .main__content--section div.rooms__suites--images div.rooms__suites--item .suites__item--description {
+  position: absolute;
+  left: 11px;
+  bottom: 23px;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+}
+.main__content .main__content--section div.rooms__suites--images div.rooms__suites--item .suites__item--description > h3 {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+}
+.main__content .main__content--section div.rooms__suites--images div.rooms__suites--item .suites__item--description > h5 {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.main__content .main__content--section div.rooms__suites--images div.rooms__suites--item .suites__item--description > h5 > span {
+  font-size: 12px;
+  font-weight: 500;
+}
+.main__content .main__content--section#testimonials {
+  padding-top: 99px;
+  background-color: #F2F2F2;
+}
+.main__content .main__content--section#testimonials h1 span {
+  color: #FE5303;
+}
+.main__content .main__content--section .testimonials__card {
+  display: grid;
+  grid-gap: 47px;
+  margin-top: 49px;
+  padding-left: 10px;
+  margin-bottom: 90px;
+}
+.main__content .main__content--section .testimonials__card .testimonials__card--item .item__box {
+  font-family: "Playfair Display", serif;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 32px 29px 95px 29px;
+  margin-bottom: 24px;
+}
+.main__content .main__content--section .testimonials__card .testimonials__card--item .item__box h5 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.main__content .main__content--section .testimonials__card .testimonials__card--item .item__box p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4F4F4F;
+  line-height: 2em;
+}
+.main__content .main__content--section .testimonials__card .testimonials__card--item .item__info {
+  margin-top: 24px;
+  display: flex;
+  gap: 25px;
+}
+.main__content .main__content--section .testimonials__card .testimonials__card--item .item__info img {
+  width: 47px;
+  border-radius: 50px;
+}
+.main__content .main__content--section .testimonials__card .testimonials__card--item .item__info .item__info--details {
+  display: flex;
+  flex-direction: column;
+  gap: 4.6px;
+  align-content: center;
+  font-family: "Poppins", sans-serif;
+}
+.main__content .main__content--section .testimonials__card .testimonials__card--item .item__info .item__info--details p.info__details--name {
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+}
+.main__content .main__content--section .testimonials__card .testimonials__card--item .item__info .item__info--details p.info__details--origin {
+  font-size: 12px;
+  font-weight: 500;
+  color: #BDBDBD;
+}
+
+footer {
+  padding: 50px 22px;
+}
+footer h6 {
+  font-size: 16px;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 51px 162px;
+  }
+  .container:first-child {
+    padding-top: 0px;
+  }
+  nav.navigation.nav__fix {
+    padding-left: 162px;
+    padding-right: 162px;
+  }
+  nav.navigation.nav__fix li > a.navigation__button {
+    background-color: white;
+    color: #fe5303;
+  }
+  nav.navigation ul a.navigation__button {
+    font-size: 16px;
+    padding: 14px 33px;
+  }
+  nav.navigation ul img {
+    height: 36px;
+    width: 155px;
+  }
+  div.main__header {
+    margin-top: 134px;
+  }
+  div.main__header h1.main__title {
+    font-size: 64px;
+    font-weight: 700;
+    max-width: 531px;
+  }
+  div.main__header h4 {
+    margin-top: 43px;
+  }
+  div.main__header div.booking__container {
+    display: grid;
+    grid-template-columns: minmax(auto, 815px) minmax(auto, 180px);
+    grid-gap: 14px;
+  }
+  div.main__header div.booking__container div.booking__selection {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 13px 33px;
+  }
+  div.main__header div.booking__container button.booking__button {
+    margin-top: 0px !important;
+  }
+  .about__us {
+    display: grid;
+    grid-gap: 52px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .about__us div.about__us--right {
+    display: flex;
+    flex-direction: column;
+  }
+  .about__us div.about__us--right div.content__image {
+    order: -1;
+  }
+  div.main__content div.main__content--section#accommodations {
+    padding: 0px;
+  }
+  div.main__content div.main__content--section#accommodations div.main__content--title-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  div.main__content div.main__content--section#accommodations div.rooms__suites {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 50px;
+    margin-top: 40px;
+  }
+  div.main__content div.main__content--section#accommodations div.rooms__suites div.rooms__suites--images {
+    margin-top: 0px !important;
+  }
+  div.main__content div.main__content--section#accommodations div.rooms__suites div.rooms__suites--images:first-child {
+    grid-column: 1/3;
+  }
+  .main__content div.main__content--section#testimonials {
+    padding-top: 0px;
+  }
+  .main__content div.main__content--section#testimonials h4 {
+    margin-top: 100px;
+  }
+  .main__content div.main__content--section#testimonials div.testimonials__card {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 52px;
+  }
+  .main__content div.main__content--section#testimonials div.testimonials__card div.item__box {
+    padding: 32px 24px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
