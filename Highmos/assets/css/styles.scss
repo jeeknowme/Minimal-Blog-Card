@@ -56,7 +56,7 @@ header.top__content {
   background-size: cover;
   background-position: top;
   padding-bottom: 51px;
-  // padding-top: 1px;
+  padding-top: 1px;
 }
 
 // Navigation
@@ -65,7 +65,7 @@ nav.navigation {
   padding-top: 26px;
   position: relative;  
   opacity: 1;
-  transition: opacity 1s ease-in-out;
+  // transition: opacity 1s ease-in-out;
 
 
   &.nav__fix{
@@ -79,8 +79,21 @@ nav.navigation {
     z-index: 2;
     opacity: 0.9!important;
 
+    @include mixins.keyframe(navAnimate){
+      from {
+        transform: translateY(-100px);
+      }
+    
+      to{
+        transform: translateY(0px)
+      }
+    };
+    @include mixins.animate(navAnimate, 0.5s, ease-in-out, 1);
+
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for better visibility */
   }
+
+
 
   ul {
     display: flex;
@@ -359,6 +372,10 @@ div.main__header{
 
       .testimonials__card--item{
 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
         .item__box{
           font-family: variables.$font-playfair;
           background-color: variables.$primary-color;
@@ -388,7 +405,8 @@ div.main__header{
           gap: 25px;
 
           img{
-            width: 47px;
+            max-width: 47px;
+            max-height: 47px;
             border-radius: 50px;
           }
 

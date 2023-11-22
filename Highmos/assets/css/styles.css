@@ -63,13 +63,13 @@ header.top__content {
   background-size: cover;
   background-position: top;
   padding-bottom: 51px;
+  padding-top: 1px;
 }
 
 nav.navigation {
   padding-top: 26px;
   position: relative;
   opacity: 1;
-  transition: opacity 1s ease-in-out;
 }
 nav.navigation.nav__fix {
   padding: 0px 14px 16px;
@@ -81,7 +81,16 @@ nav.navigation.nav__fix {
   padding: 10px 0px;
   z-index: 2;
   opacity: 0.9 !important;
+  animation: navAnimate 0.5s ease-in-out 1;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for better visibility */
+}
+@keyframes navAnimate {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
 nav.navigation ul {
   display: flex;
@@ -326,6 +335,11 @@ div.main__header div.booking__container button.booking__button {
   padding-left: 10px;
   margin-bottom: 90px;
 }
+.main__content .main__content--section .testimonials__card .testimonials__card--item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .main__content .main__content--section .testimonials__card .testimonials__card--item .item__box {
   font-family: "Playfair Display", serif;
   background-color: #FFFFFF;
@@ -351,7 +365,8 @@ div.main__header div.booking__container button.booking__button {
   gap: 25px;
 }
 .main__content .main__content--section .testimonials__card .testimonials__card--item .item__info img {
-  width: 47px;
+  max-width: 47px;
+  max-height: 47px;
   border-radius: 50px;
 }
 .main__content .main__content--section .testimonials__card .testimonials__card--item .item__info .item__info--details {
