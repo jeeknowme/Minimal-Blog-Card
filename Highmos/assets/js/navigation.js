@@ -2,7 +2,8 @@ let timeoutIds = [];
 
 let lastScrollTop = 0;
 
-window.addEventListener('scroll', () => {
+export const handleNavigationScroll = () => {
+    console.log('heheh');
     const navBar = document.getElementById('navigation');
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
@@ -29,27 +30,8 @@ window.addEventListener('scroll', () => {
         clearTimeout(timeoutIds[0])
         timeoutIds.shift();
     }
-})
+};
 
-// About Us Transition
-
-const aboutUs = document.querySelector('.about__us');
-
-const isInViewPort = (element) => {
-    const rect = element.getBoundingClientRect();
-
-    return (
-      rect.bottom <= window.innerHeight * 2.3
-    );
+export const initializeNavigationScroll = () => {
+    window.addEventListener('scroll', handleNavigationScroll);
 }
-
-const handleScroll = () => {
-    if (isInViewPort(aboutUs)){
-        aboutUs.classList.add('show');
-    }else{
-    }
-}
-
-window.addEventListener('scroll', handleScroll);
-
-handleScroll();
