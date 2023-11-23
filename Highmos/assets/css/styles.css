@@ -92,6 +92,17 @@ nav.navigation.nav__fix {
     transform: translateY(0px);
   }
 }
+nav.navigation.slide__up {
+  animation: slideUp 0.5s ease-in-out 1;
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-100px);
+  }
+}
 nav.navigation ul {
   display: flex;
   flex-direction: row;

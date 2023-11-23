@@ -2,11 +2,10 @@ const aboutUs = document.querySelector('.about__us');
 
 export const isInViewPort = (element) => {
     const rect = element.getBoundingClientRect();
-    return rect.bottom <= window.innerHeight * 2.3;
+    return rect.top + window.screen.height / 8 <= window.screen.height;
 };
 
 export const handleAboutUsScroll = () => {
-    console.log('scroll');
     if (isInViewPort(aboutUs)) {
         aboutUs.classList.add('show');
     } 

@@ -65,7 +65,6 @@ nav.navigation {
   padding-top: 26px;
   position: relative;  
   opacity: 1;
-  // transition: opacity 1s ease-in-out;
 
 
   &.nav__fix{
@@ -90,7 +89,22 @@ nav.navigation {
     };
     @include mixins.animate(navAnimate, 0.5s, ease-in-out, 1);
 
+
+
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for better visibility */
+  }
+
+  &.slide__up{
+    @include mixins.keyframe(slideUp){
+      from {
+        transform: translateY(0px)
+      }
+      
+      to{
+        transform: translateY(-100px);
+      }
+    };
+    @include mixins.animate(slideUp, 0.5s, ease-in-out, 1);
   }
 
 

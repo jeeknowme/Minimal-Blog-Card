@@ -3,7 +3,6 @@ let timeoutIds = [];
 let lastScrollTop = 0;
 
 export const handleNavigationScroll = () => {
-    console.log('heheh');
     const navBar = document.getElementById('navigation');
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
@@ -21,7 +20,12 @@ export const handleNavigationScroll = () => {
     lastScrollTop = scrollTop;
 
     timeoutIds.push(setTimeout(() => {
-        navBar.classList.remove('nav__fix');
+        navBar.classList.add('slide__up');
+        setTimeout(() => {
+            navBar.classList.remove('nav__fix');
+            navBar.classList.remove('slide__up');
+        },500);
+
         navBar.style.opacity = 0;
         navBar.style.opacity = 1;
     }, 3000));
@@ -31,6 +35,7 @@ export const handleNavigationScroll = () => {
         timeoutIds.shift();
     }
 };
+
 
 export const initializeNavigationScroll = () => {
     window.addEventListener('scroll', handleNavigationScroll);
