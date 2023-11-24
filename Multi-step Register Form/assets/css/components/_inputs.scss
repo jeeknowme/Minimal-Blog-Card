@@ -1,0 +1,49 @@
+@use "../variables";
+
+%base-input {
+  border-radius: variables.$border-radius;
+  padding: 15px;
+  background-color: variables.$bg-transparent;
+  width: 100%;
+}
+
+@mixin input-styles($border-color, $text-color: variables.$main-color) {
+  @extend %base-input;
+  border: 2px solid $border-color;
+  color: $text-color;
+
+  &:focus {
+    outline: 1px solid variables.$primary-bg;
+  }
+}
+
+.primary__input {
+  @include input-styles(variables.$primary-bg);
+}
+
+.error__input {
+  @include input-styles(red, variables.$main-color);
+
+  &:focus {
+    outline: 1px solid red;
+  }
+}
+
+.base__input {
+  @include input-styles(variables.$border-gray);
+}
+
+.dormant__input {
+  @extend .base__input;
+  background-color: #394050;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  // appearance: none; // No need as display is 'none'
+  display: none;
+
+  &:checked ~ label {
+    background-color: variables.$primary-bg;
+  }
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-step Register</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="main__wrapper">
+      <div class="main">
+        <div class="register active" id="register">
+          <h3>Register</h3>
+          <form action="#" method="post">
+            <div class="input__group">
+              <label for="name">Name</label>
+              <input
+                class="base__input"
+                type="text"
+                id="name"
+                placeholder="enter your name"
+              />
+            </div>
+            <div class="input__group">
+              <label for="email">Email</label>
+              <input
+                class="base__input"
+                type="email"
+                id="email"
+                placeholder="example@gmail.com"
+              />
+            </div>
+          </form>
+          <div class="button__container">
+            <button class="primary__button">Continue</button>
+          </div>
+        </div>
+        <div class="topics" id="topics">
+          <h3>Which topics you are interested in?</h3>
+          <form action="#" method="post">
+            <div class="input__group">
+              <input type="checkbox" id="software_development" />
+              <label class="dormant__input" for="software_development">
+                Software Development</label
+              >
+            </div>
+            <div class="input__group">
+              <input type="checkbox" id="user_experience" />
+              <label class="dormant__input" for="user_experience">
+                User Experience</label
+              >
+            </div>
+            <div class="input__group">
+              <input type="checkbox" id="graphic_design" />
+              <label class="dormant__input" for="graphic_design">
+                Graphic Design</label
+              >
+            </div>
+          </form>
+          <div class="button__container">
+            <button class="primary__button">Continue</button>
+          </div>
+        </div>
+        <div class="summary" id="summary">
+          <h3>Summary</h3>
+          <div class="summary__details">
+            <div class="user__details">
+              <h4><span>Name:</span> Emily Johnson</h4>
+              <h4><span>Email:</span> emily@emilyjohnsonstl.com</h4>
+            </div>
+            <div class="user__topics">
+              <h4><span>Topics:</span></h4>
+
+              <ul class="user__topics--list">
+                <li>User Experience</li>
+                <li>Graphic Design</li>
+              </ul>
+            </div>
+          </div>
+          <div class="button__container">
+            <button class="primary__button">Confirm</button>
+          </div>
+        </div>
+      </div>
+      <div class="step__indicator">
+        <h5>Step <span id="step__number">1</span> of 3</h5>
+        <div class="step__indicator--circles">
+          <span class="active" onclick="showNext(1)"></span
+          ><span onclick="showNext(2)"></span
+          ><span onclick="showNext(3)"> </span>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./assets/js/index.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+@use "variables";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+ul {
+  padding: 0 25px;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  // list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}

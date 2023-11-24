@@ -1,0 +1,21 @@
+@use "../variables";
+
+%base-button {
+  padding: 10px 30px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin button-styles($bg-color, $text-color) {
+  @extend %base-button;
+  background: $bg-color;
+  color: $text-color;
+}
+
+.primary__button {
+  @include button-styles(
+    linear-gradient(#9257ff, variables.$primary-bg),
+    variables.$main-color
+  );
+}
