@@ -42,6 +42,10 @@ body {
   .register,
   .topics,
   .summary {
+    h3:first-child {
+      font-size: 20px;
+    }
+
     &.active {
       display: flex; // Show when active
 
@@ -69,6 +73,15 @@ body {
     }
 
     .input__group {
+      label {
+        font-size: 14px;
+        color: variables.$color-gray;
+      }
+
+      label:first-child {
+        font-size: 12px;
+      }
+
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -87,8 +100,12 @@ body {
         margin: 5px 0;
       }
 
-      span {
+      span:first-child {
         color: variables.$color-gray;
+      }
+
+      span {
+        font-size: 16px;
       }
     }
   }
@@ -110,7 +127,6 @@ body {
     display: flex;
     gap: 15px;
     margin-left: 15px;
-    cursor: pointer;
 
     > span {
       content: "";
@@ -120,10 +136,22 @@ body {
       display: block;
       background-color: variables.$primary-bg;
 
-      &.active,
-      &:hover {
+      &.active {
         outline: 4px solid variables.$border-gray;
       }
+    }
+  }
+}
+
+@media (max-width: 641px) {
+  body {
+    display: block;
+  }
+
+  .main__wrapper {
+    max-width: 100%;
+    .main {
+      border-radius: 0px;
     }
   }
 }

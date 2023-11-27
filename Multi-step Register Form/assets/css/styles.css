@@ -29,45 +29,60 @@ p {
 
 body {
   margin: 0;
+  font-family: "Inter", sans-serif;
 }
 
-.base__input, .dormant__input, .error__input, .primary__input {
+.error__input, .base__input, .dormant__input, .primary__input {
   border-radius: 15px;
   padding: 15px;
   background-color: rgba(0, 0, 0, 0);
   width: 100%;
+  color: #7f808a;
 }
 
 .primary__input {
   border: 2px solid #6a2ddc;
-  color: white;
 }
 .primary__input:focus {
   outline: 1px solid #6a2ddc;
 }
 
-.error__input {
-  border: 2px solid red;
-  color: white;
-}
-.error__input:focus {
-  outline: 1px solid #6a2ddc;
-}
-.error__input:focus {
-  outline: 1px solid red;
-}
-
 .base__input, .dormant__input {
   border: 2px solid #2f3744;
-  color: white;
 }
 .base__input:focus, .dormant__input:focus {
   outline: 1px solid #6a2ddc;
 }
 
+.error__input {
+  border: 2px solid red;
+  animation: scaleUp 0.5s ease-in-out 1;
+}
+.error__input:focus {
+  outline: 1px solid #6a2ddc;
+}
+@keyframes scaleUp {
+  25% {
+    transform: translateY(3%);
+  }
+  50% {
+    transform: translateY(-3%);
+  }
+  75% {
+    transform: translateY(3%);
+  }
+  100% {
+    transform: translateY(-3%);
+  }
+}
+.error__input:focus {
+  outline: 1px solid red;
+}
+
 .dormant__input {
   background-color: #394050;
   cursor: pointer;
+  color: white;
 }
 
 input[type=checkbox] {
@@ -75,6 +90,8 @@ input[type=checkbox] {
 }
 input[type=checkbox]:checked ~ label {
   background-color: #6a2ddc;
+  color: white !important;
+  border: solid 1px #a1a1a9;
 }
 
 .primary__button {
@@ -128,6 +145,11 @@ body {
   flex-direction: column;
   gap: 30px;
 }
+.main .register h3:first-child,
+.main .topics h3:first-child,
+.main .summary h3:first-child {
+  font-size: 20px;
+}
 .main .register.active,
 .main .topics.active,
 .main .summary.active {
@@ -158,6 +180,17 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+.main .register .input__group label,
+.main .topics .input__group label,
+.main .summary .input__group label {
+  font-size: 14px;
+  color: #7f808a;
+}
+.main .register .input__group label:first-child,
+.main .topics .input__group label:first-child,
+.main .summary .input__group label:first-child {
+  font-size: 12px;
+}
 .main .register .button__container,
 .main .topics .button__container,
 .main .summary .button__container {
@@ -175,10 +208,15 @@ body {
 .main .summary .summary__details h4 {
   margin: 5px 0;
 }
+.main .register .summary__details span:first-child,
+.main .topics .summary__details span:first-child,
+.main .summary .summary__details span:first-child {
+  color: #7f808a;
+}
 .main .register .summary__details span,
 .main .topics .summary__details span,
 .main .summary .summary__details span {
-  color: #7f808a;
+  font-size: 16px;
 }
 
 .step__indicator {
@@ -196,7 +234,6 @@ body {
   display: flex;
   gap: 15px;
   margin-left: 15px;
-  cursor: pointer;
 }
 .step__indicator .step__indicator--circles > span {
   content: "";
@@ -206,8 +243,20 @@ body {
   display: block;
   background-color: #6a2ddc;
 }
-.step__indicator .step__indicator--circles > span.active, .step__indicator .step__indicator--circles > span:hover {
+.step__indicator .step__indicator--circles > span.active {
   outline: 4px solid #2f3744;
+}
+
+@media (max-width: 641px) {
+  body {
+    display: block;
+  }
+  .main__wrapper {
+    max-width: 100%;
+  }
+  .main__wrapper .main {
+    border-radius: 0px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

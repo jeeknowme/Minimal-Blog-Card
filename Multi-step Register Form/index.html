@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multi-step Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
@@ -19,6 +25,7 @@
                 type="text"
                 id="name"
                 placeholder="enter your name"
+                data-error="name"
               />
             </div>
             <div class="input__group">
@@ -28,66 +35,88 @@
                 type="email"
                 id="email"
                 placeholder="example@gmail.com"
+                data-error="email"
               />
             </div>
           </form>
           <div class="button__container">
-            <button class="primary__button">Continue</button>
+            <button class="primary__button continue" id="first__step">
+              Continue
+            </button>
           </div>
         </div>
         <div class="topics" id="topics">
           <h3>Which topics you are interested in?</h3>
           <form action="#" method="post">
             <div class="input__group">
-              <input type="checkbox" id="software_development" />
+              <input
+                type="checkbox"
+                value="Software Development"
+                id="software_development"
+                data-error="topics"
+              />
               <label class="dormant__input" for="software_development">
                 Software Development</label
               >
             </div>
             <div class="input__group">
-              <input type="checkbox" id="user_experience" />
+              <input
+                type="checkbox"
+                value="User Experience"
+                id="user_experience"
+                data-error="topics"
+              />
               <label class="dormant__input" for="user_experience">
                 User Experience</label
               >
             </div>
             <div class="input__group">
-              <input type="checkbox" id="graphic_design" />
+              <input
+                type="checkbox"
+                value="Graphic Design"
+                id="graphic_design"
+                data-error="topics"
+              />
               <label class="dormant__input" for="graphic_design">
                 Graphic Design</label
               >
             </div>
           </form>
           <div class="button__container">
-            <button class="primary__button">Continue</button>
+            <button class="primary__button continue" id="second__step">
+              Continue
+            </button>
           </div>
         </div>
         <div class="summary" id="summary">
           <h3>Summary</h3>
           <div class="summary__details">
             <div class="user__details">
-              <h4><span>Name:</span> Emily Johnson</h4>
-              <h4><span>Email:</span> emily@emilyjohnsonstl.com</h4>
+              <h4>
+                <span>Name:</span> <span id="summary__name">Emily Johnson</span>
+              </h4>
+              <h4><span>Email:</span> <span id="summary__email"></span></h4>
             </div>
             <div class="user__topics">
               <h4><span>Topics:</span></h4>
 
-              <ul class="user__topics--list">
+              <ul class="user__topics--list" id="summary__topics">
                 <li>User Experience</li>
                 <li>Graphic Design</li>
               </ul>
             </div>
           </div>
           <div class="button__container">
-            <button class="primary__button">Confirm</button>
+            <button class="primary__button" id="summary__confirm">
+              Confirm
+            </button>
           </div>
         </div>
       </div>
       <div class="step__indicator">
         <h5>Step <span id="step__number">1</span> of 3</h5>
         <div class="step__indicator--circles">
-          <span class="active" onclick="showNext(1)"></span
-          ><span onclick="showNext(2)"></span
-          ><span onclick="showNext(3)"> </span>
+          <span class="active"></span><span></span><span> </span>
         </div>
       </div>
     </div>

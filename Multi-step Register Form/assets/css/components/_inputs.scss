@@ -1,16 +1,18 @@
 @use "../variables";
+@use "../mixins";
 
 %base-input {
   border-radius: variables.$border-radius;
   padding: 15px;
   background-color: variables.$bg-transparent;
   width: 100%;
+  color: variables.$color-gray;
 }
 
 @mixin input-styles($border-color, $text-color: variables.$main-color) {
   @extend %base-input;
   border: 2px solid $border-color;
-  color: $text-color;
+  // color: $text-color;
 
   &:focus {
     outline: 1px solid variables.$primary-bg;
@@ -21,22 +23,39 @@
   @include input-styles(variables.$primary-bg);
 }
 
+.base__input {
+  @include input-styles(variables.$border-gray);
+}
+
 .error__input {
   @include input-styles(red, variables.$main-color);
+
+  @include mixins.keyframe(scaleUp) {
+    25% {
+      transform: translateY(3%);
+    }
+    50% {
+      transform: translateY(-3%);
+    }
+    75% {
+      transform: translateY(3%);
+    }
+    100% {
+      transform: translateY(-3%);
+    }
+  }
+  @include mixins.animate(scaleUp, 0.5s, ease-in-out, 1);
 
   &:focus {
     outline: 1px solid red;
   }
 }
 
-.base__input {
-  @include input-styles(variables.$border-gray);
-}
-
 .dormant__input {
   @extend .base__input;
   background-color: #394050;
   cursor: pointer;
+  color: white;
 }
 
 input[type="checkbox"] {
@@ -45,5 +64,7 @@ input[type="checkbox"] {
 
   &:checked ~ label {
     background-color: variables.$primary-bg;
+    color: white !important;
+    border: solid 1px #a1a1a9;
   }
 }

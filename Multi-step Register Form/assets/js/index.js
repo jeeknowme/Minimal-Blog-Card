@@ -1,3 +1,5 @@
-import { showNext } from "./stepper.js";
+import initializeRegister from "./Register/register.js";
+// import initializeStepper from "./Register/stepper.js";
 
-window.showNext = showNext;
+// initializeStepper();
+initializeRegister();
