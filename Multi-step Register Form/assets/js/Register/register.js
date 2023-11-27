@@ -1,11 +1,11 @@
-import { saveToLocalStorage } from "../util.js";
+import { saveToSessionStorage } from "../util.js";
 import { isNotEmpty } from "./validate.js";
 import { isValidEmail } from "./validate.js";
 import { validate } from "./validate.js";
 import { handleClick, showErrors } from "./stepper.js";
 import { showSummary } from "./stepper.js";
 
-let register = JSON.parse(localStorage.getItem("register")) || {
+let register = JSON.parse(sessionStorage.getItem("register")) || {
   name: {
     value: "",
     error: true,
@@ -73,7 +73,7 @@ const registerButtonEvent = (element, eventName, fields) => {
 const registerInputEvent = (element, eventName, name) => {
   element.addEventListener(eventName, (eventObject) => {
     updateRegister(name, eventObject);
-    saveToLocal();
+    saveToSession();
   });
 };
 
@@ -98,8 +98,8 @@ const registerEvent = (...args) => {
   });
 };
 
-const saveToLocal = () => {
-  saveToLocalStorage("register", register);
+const saveToSession = () => {
+  saveToSessionStorage("register", register);
 };
 
 const updateRegister = (name, eventObject) => {
