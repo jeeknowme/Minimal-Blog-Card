@@ -150,7 +150,7 @@ const initializeRegister = () => {
     );
 
     secondStep.addEventListener("click", () => showSummary(register));
-    lastStep.addEventListener("click", () => alert("Success"));
+    lastStep.addEventListener("click", () => alert("We did it hooray"));
   });
 };
 
