@@ -35,10 +35,22 @@ h5 {
   margin: 0;
 }
 
-.card .card__buttons .button--previous,
+.card .button--play, .card .card__buttons .button--previous,
 .card .card__buttons .button--next {
   background: none;
   border: none;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+.card .button--play:hover, .card .card__buttons .button--previous:hover,
+.card .card__buttons .button--next:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 5px 5px rgba(239, 238, 238, 0.5);
+}
+.card .button--play:active, .card .card__buttons .button--previous:active,
+.card .card__buttons .button--next:active {
+  background-color: #c93b76;
 }
 
 body {
@@ -76,6 +88,15 @@ body {
   padding: 5px 6px;
   display: flex;
 }
+.card .button--play .svg--pause {
+  display: none;
+}
+.card .button--play.button--pause > svg.svg--play {
+  display: none;
+}
+.card .button--play.button--pause > svg.svg--pause {
+  display: block;
+}
 .card .card__details .card__title {
   font-size: 16px;
   font-weight: 400;
@@ -101,6 +122,10 @@ body {
   border-radius: 20px;
   content: "";
   margin-top: 5px;
+  cursor: pointer;
+}
+.card .card__progressbar .progressbar__container:hover {
+  box-shadow: 0px 0px 5px 0px #e5e7eb;
 }
 .card .card__progressbar .progressbar__slider {
   width: 30%;

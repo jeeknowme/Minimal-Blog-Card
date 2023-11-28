@@ -1,6 +1,7 @@
 @use "presets";
 @use "globals/variables";
 @use "globals/buttons";
+@use "mixins";
 
 // Variables
 
@@ -39,11 +40,25 @@ body {
   }
 
   .button--play {
+    @extend %base-button;
     background: variables.$mediumRedViolet;
     border: none;
     border-radius: 50px;
     padding: 5px 6px;
     display: flex;
+
+    .svg--pause {
+      display: none;
+    }
+
+    &.button--pause {
+      & > svg.svg--play {
+        display: none;
+      }
+      & > svg.svg--pause {
+        display: block;
+      }
+    }
   }
 
   .card__details {
@@ -76,6 +91,10 @@ body {
       border-radius: 20px;
       content: "";
       margin-top: 5px;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0px 0px 5px 0px variables.$athensGray;
+      }
     }
 
     .progressbar__slider {
