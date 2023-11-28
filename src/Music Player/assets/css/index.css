@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding: 0px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+h6,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+.card .card__buttons .button--previous,
+.card .card__buttons .button--next {
+  background: none;
+  border: none;
+}
+
+body {
+  min-height: 100vh;
+  background-image: url(../images/bg.jpg);
+  display: grid;
+  grid-template: 1fr/1fr;
+  color: #e5e7eb;
+}
+
+.main__wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: rgba(18, 24, 38, 0.6509803922);
+  text-align: center;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 20px;
+  display: grid;
+  grid-gap: 10px;
+}
+.card .card__image {
+  border-radius: 20px;
+}
+.card .button--play {
+  background: #c93b76;
+  border: none;
+  border-radius: 50px;
+  padding: 5px 6px;
+  display: flex;
+}
+.card .card__details .card__title {
+  font-size: 16px;
+  font-weight: 400;
+}
+.card .card__details .card__author {
+  font-size: 12px;
+  color: #4d5562;
+  margin-top: 5px;
+}
+.card .card__progressbar {
+  margin: 20px 0;
+}
+.card .card__progressbar .progressbar__time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #4d5562;
+}
+.card .card__progressbar .progressbar__container {
+  display: block;
+  background: #e5e7eb;
+  height: 4px;
+  border-radius: 20px;
+  content: "";
+  margin-top: 5px;
+}
+.card .card__progressbar .progressbar__slider {
+  width: 30%;
+  background-color: #c93b76;
+  height: 100%;
+  box-shadow: 0px 0px 5px 0px #c93b76;
+  border-radius: 20px;
+}
+.card .card__buttons {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+}
+
+/*# sourceMappingURL=index.css.map */
