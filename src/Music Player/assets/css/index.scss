@@ -45,8 +45,10 @@ body {
     border: none;
     padding: 5px 6px;
     display: flex;
-    // Remove light blue background color on click on mobile devices
-    -webkit-tap-highlight-color: transparent;
+
+    &.active {
+      background-color: variables.$mediumRedViolet;
+    }
 
     .svg--pause {
       display: none;

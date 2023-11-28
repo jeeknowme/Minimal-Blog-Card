@@ -8,6 +8,8 @@
   transform: scale(1);
   transition: transform 0.2s ease-in-out;
   border-radius: 50px;
+  // Remove light blue background color on click on mobile devices
+  -webkit-tap-highlight-color: transparent;
 
   &.mobile-hover {
     @include mixins.keyframe(glowUp) {

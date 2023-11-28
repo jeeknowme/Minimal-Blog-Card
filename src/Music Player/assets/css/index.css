@@ -43,6 +43,7 @@ h5 {
   transform: scale(1);
   transition: transform 0.2s ease-in-out;
   border-radius: 50px;
+  -webkit-tap-highlight-color: transparent;
 }
 .card .mobile-hover.button--play, .card .card__buttons .mobile-hover.button--previous,
 .card .card__buttons .mobile-hover.button--next {
@@ -101,7 +102,9 @@ body {
   border: none;
   padding: 5px 6px;
   display: flex;
-  -webkit-tap-highlight-color: transparent;
+}
+.card .button--play.active {
+  background-color: #c93b76;
 }
 .card .button--play .svg--pause {
   display: none;
