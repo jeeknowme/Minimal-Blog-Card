@@ -89,9 +89,9 @@ const initializeMusicEvents = (audioPlayer, buttonPlayer, durationEl) => {
     setSource();
     buttonPlayer.addEventListener("click", handlePlay);
 
-    setTimeout(() => {
-      setDuration(durationEl);
-    }, 150);
+    audioPlayer.addEventListener("loadedmetadata", () =>
+      setDuration(durationEl)
+    );
   });
 };
 
