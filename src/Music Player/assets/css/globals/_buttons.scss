@@ -7,13 +7,30 @@
   cursor: pointer;
   transform: scale(1);
   transition: transform 0.2s ease-in-out;
+  border-radius: 50px;
 
-  &:hover {
+  &.mobile-hover {
+    @include mixins.keyframe(glowUp) {
+      from {
+        transform: scale(1);
+        box-shadow: 0 0 5px 5px rgba($color: #efeeee, $alpha: 0);
+      }
+
+      to {
+        transform: scale(1.1);
+        box-shadow: 0 0 5px 5px rgba($color: #efeeee, $alpha: 0.5);
+      }
+    }
+
+    @include mixins.animate(glowUp, 0.1s, linear, 0s);
+  }
+
+  &.hover {
     transform: scale(1.1);
     box-shadow: 0 0 5px 5px rgba($color: #efeeee, $alpha: 0.5);
   }
 
-  &:active {
-    background-color: variables.$mediumRedViolet;
+  &.active {
+    background-color: variables.$athensGray;
   }
 }

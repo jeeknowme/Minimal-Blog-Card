@@ -23,6 +23,7 @@ let audioElement;
 let buttonPlayer;
 let duration;
 let durationElement;
+let isTouchDevice;
 
 const musicLength = () => {
   return musicList.length;
@@ -63,7 +64,9 @@ const handlePlay = () => {
   if (audioElement.paused) play();
   else pause();
   //   Toggle button class to show/hide play/pause svg
+
   buttonPlayer.classList.toggle("button--pause");
+  if (isTouchDevice) buttonPlayer.classList.toggle("mobile-hover");
 };
 
 const setSource = (source = firstMusic()) => {
@@ -84,14 +87,52 @@ const setDuration = (durationEl) => {
 };
 
 const initializeMusicEvents = (audioPlayer, buttonPlayer, durationEl) => {
+  const nextButton = document.querySelector(".button--next");
+  const previousButton = document.querySelector(".button--previous");
+
   document.addEventListener("DOMContentLoaded", () => {
     setPlayer(audioPlayer, buttonPlayer);
     setSource();
-    buttonPlayer.addEventListener("click", handlePlay);
 
     audioPlayer.addEventListener("loadedmetadata", () =>
       setDuration(durationEl)
     );
+
+    buttonPlayer.addEventListener("click", handlePlay);
+
+    // Set separate event listener on pause/play button for mobile
+    // To fix :hover functioning as click on mobile
+
+    const elements = [nextButton, previousButton, buttonPlayer];
+
+    isTouchDevice =
+      "ontouchstart" in document.documentElement ||
+      navigator.maxTouchPoints > 0 ||
+      navigator.maxTouchPoints > 0;
+
+    if (isTouchDevice) {
+      elements.forEach((element) => {
+        element.addEventListener("mousedown", () => {
+          element.classList.add("active");
+        });
+
+        element.addEventListener("mouseup", () => {
+          element.classList.remove("active");
+        });
+      });
+    } else {
+      elements.forEach((element) => {
+        element.addEventListener("mouseenter", () => {
+          element.classList.add("hover");
+        });
+
+        element.addEventListener("mouseleave", () => {
+          element.classList.remove("hover");
+        });
+      });
+    }
+
+    buttonPlayer.addEventListener;
   });
 };
 

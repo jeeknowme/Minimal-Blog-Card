@@ -42,15 +42,30 @@ h5 {
   cursor: pointer;
   transform: scale(1);
   transition: transform 0.2s ease-in-out;
+  border-radius: 50px;
 }
-.card .button--play:hover, .card .card__buttons .button--previous:hover,
-.card .card__buttons .button--next:hover {
+.card .mobile-hover.button--play, .card .card__buttons .mobile-hover.button--previous,
+.card .card__buttons .mobile-hover.button--next {
+  animation: glowUp 0.1s linear 0s;
+}
+@keyframes glowUp {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 5px 5px rgba(239, 238, 238, 0);
+  }
+  to {
+    transform: scale(1.1);
+    box-shadow: 0 0 5px 5px rgba(239, 238, 238, 0.5);
+  }
+}
+.card .hover.button--play, .card .card__buttons .hover.button--previous,
+.card .card__buttons .hover.button--next {
   transform: scale(1.1);
   box-shadow: 0 0 5px 5px rgba(239, 238, 238, 0.5);
 }
-.card .button--play:active, .card .card__buttons .button--previous:active,
-.card .card__buttons .button--next:active {
-  background-color: #c93b76;
+.card .active.button--play, .card .card__buttons .active.button--previous,
+.card .card__buttons .active.button--next {
+  background-color: #e5e7eb;
 }
 
 body {
@@ -84,9 +99,9 @@ body {
 .card .button--play {
   background: #c93b76;
   border: none;
-  border-radius: 50px;
   padding: 5px 6px;
   display: flex;
+  -webkit-tap-highlight-color: transparent;
 }
 .card .button--play .svg--pause {
   display: none;
