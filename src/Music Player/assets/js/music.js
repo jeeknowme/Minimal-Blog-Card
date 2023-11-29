@@ -30,10 +30,14 @@ let isTouchDevice;
 let isPlaying;
 let runningTime;
 let runningTimeElement;
+let sliderElementWidth;
 
 let albumElement;
 let authorElement;
 let titleElement;
+let sliderElement;
+
+let second = -1;
 
 const musicLength = () => {
   return musicList.length;
@@ -120,6 +124,11 @@ const handlePlay = () => {
   if (isTouchDevice) buttonPlayer.classList.toggle("mobile-hover");
 };
 
+const stop = () => {
+  buttonPlayer.classList.remove("button--pause");
+  isPlaying = false;
+};
+
 const setSource = () => {
   audioElement.src = currentMusic().musicUrl;
 };
@@ -130,16 +139,23 @@ const setRunningTime = (runningEl) => {
 };
 
 const setDuration = (durationEl) => {
-  duration = audioElement.duration;
+  duration = audioElement.duration.toFixed(0);
+
   durationElement = durationEl;
-  durationElement.innerHTML = (duration / 60)
-    .toFixed(2)
-    .replace(".", ":")
-    .split(":")
-    .map((n) => {
-      return n.length === 1 ? "0" + n : n;
-    })
-    .join(":");
+  durationElement.innerHTML = getTime(duration);
+};
+
+const getTime = (currentSecond) => {
+  const second = currentSecond % 60;
+  if (currentSecond > 59) {
+    return (currentSecond / 60)
+      .toFixed(0)
+      .concat(":" + (second < 10 ? `0${second}` : second));
+  } else {
+    if (second < 10) {
+      return `0:0${currentSecond}`;
+    } else return `0:${currentSecond}`;
+  }
 };
 
 const initializeMusicEvents = (
@@ -154,6 +170,8 @@ const initializeMusicEvents = (
   albumElement = document.querySelector(".card__image");
   titleElement = document.querySelector(".card__title");
   authorElement = document.querySelector(".card__author");
+  sliderElement = document.querySelector(".progressbar__slider");
+  sliderElementWidth = document.querySelector(".progressbar__container");
 
   document.addEventListener("DOMContentLoaded", () => {
     setPlayer(audioPlayer, buttonPlayer);
@@ -163,6 +181,18 @@ const initializeMusicEvents = (
       setDuration(durationEl);
       setRunningTime(runningEl);
     });
+
+    audioPlayer.addEventListener("timeupdate", (event) => {
+      const currentSecond = event.target.currentTime.toFixed(0);
+      if (currentSecond != second) {
+        second = currentSecond;
+        sliderElement.style.width =
+          (sliderElementWidth.offsetWidth / duration) * second + "px";
+        runningTimeElement.innerHTML = getTime(currentSecond);
+      }
+    });
+
+    audioPlayer.addEventListener("ended", stop);
 
     nextButton.addEventListener("click", next);
     previousButton.addEventListener("click", previous);
