@@ -96,6 +96,7 @@ body {
 }
 .card .card__image {
   border-radius: 20px;
+  src: "";
 }
 .card .button--play {
   background: #c93b76;
