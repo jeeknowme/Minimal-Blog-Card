@@ -1,25 +1,4 @@
-const path = location.pathname.replace("/index.html", "") + "/assets/";
-
-const musicList = [
-  {
-    title: "Forest Lullaby",
-    author: "Lesfm",
-    musicUrl: "music/forest-lullaby-110624.mp3",
-    album: "images/cover-1.png",
-  },
-  {
-    title: "Lost in the City lights",
-    author: "Cosmo Sheldrake",
-    musicUrl: "music/lost-in-city-lights-145038.mp3",
-    album: "images/cover-2.png",
-  },
-].map((music) => {
-  return {
-    ...music,
-    musicUrl: path + music.musicUrl,
-    album: path + music.album,
-  };
-});
+import { musicList } from "./CONSTANTS.js";
 
 let currentMusicIndex = 0;
 let audioElement;
@@ -42,8 +21,6 @@ let second = -1;
 const musicLength = () => {
   return musicList.length;
 };
-
-const firstMusic = () => musicList[0].musicUrl;
 
 const setPlayer = (audio, button) => {
   audioElement = audio;
@@ -118,8 +95,8 @@ const previous = () => {
 const handlePlay = () => {
   if (audioElement.paused) play();
   else pause();
-  //   Toggle button class to show/hide play/pause svg
 
+  //   Toggle button class to show/hide play/pause svg
   buttonPlayer.classList.toggle("button--pause");
   if (isTouchDevice) buttonPlayer.classList.toggle("mobile-hover");
 };
@@ -207,10 +184,8 @@ const initializeMusicEvents = (
 
     const elements = [nextButton, previousButton, buttonPlayer];
 
-    isTouchDevice =
-      "ontouchstart" in document.documentElement ||
-      navigator.maxTouchPoints > 0 ||
-      navigator.maxTouchPoints > 0;
+    isTouchDevice = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    console.log(isTouchDevice);
 
     if (isTouchDevice) {
       elements.forEach((element) => {

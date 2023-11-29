@@ -105,6 +105,8 @@ body {
       height: 100%;
       box-shadow: 0px 0px 5px 0px #c93b76;
       border-radius: variables.$defaultRadius;
+      width: 100%;
+      transition: width ease-in-out 0.5s;
     }
   }
 
