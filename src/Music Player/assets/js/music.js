@@ -7,10 +7,17 @@ let isTouchDevice;
 let isPlaying;
 
 let buttonPlayer;
-let audioElement;
-let albumElement;
-let authorElement;
-let titleElement;
+let audio;
+let album;
+let author;
+let title;
+
+let durationTime;
+let nextButton;
+let previousButton;
+let runningTime;
+let slider;
+let sliderParent;
 
 let second = -1;
 
@@ -18,12 +25,19 @@ const musicLength = () => {
   return musicList.length;
 };
 
-const setMusicPlayer = (audio, button, album, author, title) => {
-  audioElement = audio;
-  buttonPlayer = button;
-  albumElement = album;
-  authorElement = author;
-  titleElement = title;
+const setup = () => {
+  audio = document.getElementById("music");
+  buttonPlayer = document.querySelector(".button--play");
+  durationTime = document.querySelector(".duration__time");
+  runningTime = document.querySelector(".running__time");
+  nextButton = document.querySelector(".button--next");
+  previousButton = document.querySelector(".button--previous");
+
+  album = document.querySelector(".card__image");
+  title = document.querySelector(".card__title");
+  author = document.querySelector(".card__author");
+  slider = document.querySelector(".progressbar__slider");
+  sliderParent = document.querySelector(".progressbar__container");
 };
 
 const currentMusic = () => {
@@ -43,12 +57,12 @@ const currentTitle = () => {
 };
 
 const play = () => {
-  audioElement.play();
+  audio.play();
   isPlaying = true;
 };
 
 const pause = () => {
-  audioElement.pause();
+  audio.pause();
   isPlaying = false;
 };
 
@@ -70,19 +84,19 @@ const setMusicDetails = () => {
 };
 
 const setAlbum = () => {
-  albumElement.src = currentAlbum();
+  album.src = currentAlbum();
 };
 
 const setAuthor = () => {
-  authorElement.innerHTML = currentAuthor();
+  author.innerHTML = currentAuthor();
 };
 
 const setTitle = () => {
-  titleElement.innerHTML = currentTitle();
+  title.innerHTML = currentTitle();
 };
 
 const setSource = () => {
-  audioElement.src = currentMusic().musicUrl;
+  audio.src = currentMusic().musicUrl;
 };
 
 const previous = () => {
@@ -96,7 +110,7 @@ const previous = () => {
 };
 
 const handlePlay = () => {
-  if (audioElement.paused) play();
+  if (audio.paused) play();
   else pause();
 
   // Toggle button class to show/hide play/pause svg
@@ -109,9 +123,9 @@ const stop = () => {
   isPlaying = false;
 };
 
-const setDuration = (durationElement) => {
-  duration = audioElement.duration.toFixed(0);
-  durationElement.innerHTML = getTime(duration);
+const setDuration = () => {
+  duration = audio.duration.toFixed(0);
+  durationTime.innerHTML = getTime(duration);
 };
 
 const getTime = (currentSecond) => {
@@ -127,33 +141,16 @@ const getTime = (currentSecond) => {
   }
 };
 
-const initializeEventListener = () => {
-  const audioPlayer = document.getElementById("music");
-  const buttonPlayer = document.querySelector(".button--play");
-  const durationTime = document.querySelector(".duration__time");
-  const runningTime = document.querySelector(".running__time");
-  const nextButton = document.querySelector(".button--next");
-  const previousButton = document.querySelector(".button--previous");
-
-  const album = document.querySelector(".card__image");
-  const title = document.querySelector(".card__title");
-  const author = document.querySelector(".card__author");
-  const slider = document.querySelector(".progressbar__slider");
-  const sliderParent = document.querySelector(".progressbar__container");
-
-  audioPlayer.addEventListener("ended", stop);
+const registerEventListener = () => {
+  audio.addEventListener("loadedmetadata", setDuration);
+  audio.addEventListener("ended", stop);
   nextButton.addEventListener("click", next);
   previousButton.addEventListener("click", previous);
   buttonPlayer.addEventListener("click", handlePlay);
 
-  setMusicPlayer(audioPlayer, buttonPlayer, album, author, title);
-
-  audioPlayer.addEventListener("loadedmetadata", () => {
-    setDuration(durationTime);
-  });
-
-  audioPlayer.addEventListener("timeupdate", (event) => {
+  audio.addEventListener("timeupdate", (event) => {
     const currentSecond = event.target.currentTime.toFixed(0);
+
     if (currentSecond != second) {
       second = currentSecond;
       slider.style.width =
@@ -194,8 +191,12 @@ const initializeEventListener = () => {
 
 const initializeMusicEvents = () => {
   document.addEventListener("DOMContentLoaded", () => {
+    // Register elements
+    setup();
+
     // Register event listeners
-    initializeEventListener();
+    registerEventListener();
+
     // Load music details
     setMusicDetails();
   });
