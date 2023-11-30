@@ -166,7 +166,6 @@ const updateTime = (changeTime) => {
 };
 
 const setCurrentTime = () => {
-  console.log(second);
   audio.currentTime = second;
 };
 
