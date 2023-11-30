@@ -5,21 +5,22 @@ let currentMusicIndex = 0;
 let duration;
 let isTouchDevice;
 let isPlaying;
+let second = -1;
+
+// Elements
 
 let buttonPlayer;
 let audio;
 let album;
 let author;
 let title;
-
 let durationTime;
 let nextButton;
 let previousButton;
 let runningTime;
 let slider;
 let sliderParent;
-
-let second = -1;
+let sliderThumb;
 
 const musicLength = () => {
   return musicList.length;
@@ -38,23 +39,18 @@ const setup = () => {
   author = document.querySelector(".card__author");
   slider = document.querySelector(".progressbar__slider");
   sliderParent = document.querySelector(".progressbar__container");
+  sliderThumb = document.getElementById("change__play");
 };
 
 const currentMusic = () => {
   return musicList[currentMusicIndex];
 };
 
-const currentAlbum = () => {
-  return currentMusic().album;
-};
+const currentAlbum = () => currentMusic().album;
 
-const currentAuthor = () => {
-  return currentMusic().author;
-};
+const currentAuthor = () => currentMusic().author;
 
-const currentTitle = () => {
-  return currentMusic().title;
-};
+const currentTitle = () => currentMusic().title;
 
 const play = () => {
   audio.play();
@@ -76,11 +72,31 @@ const next = () => {
   if (isPlaying) play();
 };
 
+const setRange = () => {
+  sliderThumb.max = duration;
+};
+
+const previous = () => {
+  if (currentMusicIndex > 0) {
+    currentMusicIndex--;
+  }
+
+  setMusicDetails();
+
+  if (isPlaying) play();
+};
+
 const setMusicDetails = () => {
   setAlbum();
   setAuthor();
   setTitle();
   setSource();
+  setRange();
+  resetTime();
+};
+
+const resetTime = () => {
+  second = -1;
 };
 
 const setAlbum = () => {
@@ -99,16 +115,6 @@ const setSource = () => {
   audio.src = currentMusic().musicUrl;
 };
 
-const previous = () => {
-  if (currentMusicIndex > 0) {
-    currentMusicIndex--;
-  }
-
-  setMusicDetails();
-
-  if (isPlaying) play();
-};
-
 const handlePlay = () => {
   if (audio.paused) play();
   else pause();
@@ -116,6 +122,12 @@ const handlePlay = () => {
   // Toggle button class to show/hide play/pause svg
   buttonPlayer.classList.toggle("button--pause");
   if (isTouchDevice) buttonPlayer.classList.toggle("mobile-hover");
+};
+
+const changePlay = ({ target: { value } }) => {
+  updateTime(value);
+  updateRunner();
+  updateThumb();
 };
 
 const stop = () => {
@@ -129,34 +141,69 @@ const setDuration = () => {
 };
 
 const getTime = (currentSecond) => {
-  const second = currentSecond % 60;
+  const runningSecond = currentSecond % 60;
   if (currentSecond > 59) {
-    return (currentSecond / 60)
-      .toFixed(0)
-      .concat(":" + (second < 10 ? `0${second}` : second));
+    return String(Math.floor(currentSecond / 60)).concat(
+      ":" + (runningSecond < 10 ? `0${runningSecond}` : runningSecond)
+    );
   } else {
-    if (second < 10) {
+    if (runningSecond < 10) {
       return `0:0${currentSecond}`;
     } else return `0:${currentSecond}`;
   }
 };
 
+const updateTime = (changeTime) => {
+  const currentSecond = getCurrentTime().toFixed(0);
+  if (currentSecond !== second) {
+    second = currentSecond;
+  }
+  if (changeTime) {
+    second = changeTime;
+    setCurrentTime();
+  }
+  updateRunningTime();
+};
+
+const setCurrentTime = () => {
+  console.log(second);
+  audio.currentTime = second;
+};
+
+const getCurrentTime = () => {
+  return audio.currentTime;
+};
+
+// Update display of runtime
+const updateRunningTime = () => {
+  runningTime.innerHTML = getTime(second);
+};
+
+// Update progress bar
+const updateRunner = () => {
+  slider.style.width = (sliderParent.offsetWidth / duration) * second + "px";
+};
+
+// Update the thumb circle position
+const updateThumb = () => {
+  sliderThumb.value = second - 1;
+};
+
 const registerEventListener = () => {
-  audio.addEventListener("loadedmetadata", setDuration);
+  audio.addEventListener("loadedmetadata", () => {
+    setDuration();
+    setRange();
+  });
   audio.addEventListener("ended", stop);
   nextButton.addEventListener("click", next);
   previousButton.addEventListener("click", previous);
   buttonPlayer.addEventListener("click", handlePlay);
+  sliderThumb.addEventListener("change", changePlay);
 
-  audio.addEventListener("timeupdate", (event) => {
-    const currentSecond = event.target.currentTime.toFixed(0);
-
-    if (currentSecond != second) {
-      second = currentSecond;
-      slider.style.width =
-        (sliderParent.offsetWidth / duration) * second + "px";
-      runningTime.innerHTML = getTime(currentSecond);
-    }
+  audio.addEventListener("timeupdate", () => {
+    updateTime();
+    updateRunner();
+    updateThumb();
   });
 
   // Set separate event listener on pause/play button for mobile
